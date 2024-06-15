@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Informe de Usuarios</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h1>Informe de Usuarios</h1>
+    <h2>Gráfico: Número de usuarios por ciudad</h2>
+    <img src="data:image/png;base64,{{ plot_url }}" alt="Gráfico de barras">
+    <h2>Datos de Usuarios</h2>
+    {% for table in tables %}
+        {{ table|safe }}
+    {% endfor %}
+</body>
+</html>
